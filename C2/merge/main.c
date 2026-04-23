@@ -1,7 +1,8 @@
 #include "C2.h"
 
 int main(int argc, char **argv){
-    int n, *TEST;
+    int n;
+    
 
     n = count(argv[1]);
     TEST = read_array(argv[1], n);

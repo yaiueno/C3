@@ -1,5 +1,4 @@
 #include "C1.h"
-
 typedef struct {
     int id;
     int score;
