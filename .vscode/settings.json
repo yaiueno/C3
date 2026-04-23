@@ -1,0 +1,6 @@
+{
+  "editor.inlineSuggest.enabled": false,
+  "editor.suggest.preview": false,
+  "editor.inlineSuggest.showToolbar": "never",
+  "github.copilot.nextEditSuggestions.enabled": false
+}

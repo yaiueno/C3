@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ソート性能比較レポート</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #555;
+            margin-top: 30px;
+            border-left: 4px solid #007bff;
+            padding-left: 15px;
+        }
+        .config, .results {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .metric {
+            display: inline-block;
+            margin: 10px 20px 10px 0;
+        }
+        .metric-label {
+            font-weight: bold;
+            color: #333;
+        }
+        .metric-value {
+            color: #007bff;
+            font-size: 1.1em;
+        }
+        .comparison {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-left: 4px solid #17a2b8;
+            margin: 20px 0;
+        }
+        .winner {
+            background-color: #d4edda;
+            padding: 15px;
+            border-left: 4px solid #28a745;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔬 ソート性能比較レポート</h1>
+        
+        <h2>📊 テスト条件</h2>
+        <div class="config">
+            <div class="metric">
+                <span class="metric-label">配列サイズ:</span>
+                <span class="metric-value">100,000</span>
+            </div>
+            <div class="metric">
+                <span class="metric-label">試行回数:</span>
+                <span class="metric-value">100</span>
+            </div>
+            <div class="metric">
+                <span class="metric-label">並列ワーカー:</span>
+                <span class="metric-value">20</span>
+            </div>
+            <div class="metric">
+                <span class="metric-label">総実行時間:</span>
+                <span class="metric-value">163.621 秒</span>
+            </div>
+        </div>
+
+        <h2>⏱️ 実行結果</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ソート方式</th>
+                    <th>平均時間 (秒)</th>
+                    <th>分散 (秒²)</th>
+                    <th>最小値 (秒)</th>
+                    <th>最大値 (秒)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background-color: #ffe8e8;">
+                    <td><strong>Selection Sort</strong></td>
+                    <td>13.617374</td>
+                    <td>5.618684</td>
+                    <td>7.174946</td>
+                    <td>15.554412</td>
+                </tr>
+                <tr style="background-color: #e8f4ff;">
+                    <td><strong>Insertion Sort</strong></td>
+                    <td>12.137930</td>
+                    <td>5.570568</td>
+                    <td>6.555738</td>
+                    <td>14.588089</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🏆 比較結果</h2>
+        <div class="comparison">
+            <p><strong>性能比率 (Selection / Insertion):</strong> <span style="font-size: 1.3em; color: #ff6b6b;">1.1219x</span></p>
+        </div>
+
+        <div class="winner">
+            ✅ <strong>Insertion Sort が 1.12倍高速です</strong>
+            <p style="margin: 10px 0 0 0; font-size: 0.95em;">
+                Insertion Sort の平均実行時間が 12.137930 秒で、
+                Selection Sort の 13.617374 秒より高速です。
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>生成日時: 2026-04-16 15:54:00</p>
+            <p>テキストレポート: <code>files/benchmark_report.txt</code></p>
+            <p>JSONデータ: <code>files/benchmark_report.json</code></p>
+        </div>
+    </div>
+</body>
+</html>

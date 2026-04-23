@@ -1,0 +1,14 @@
+{
+  "editor.inlineSuggest.enabled": false,
+  "editor.inlineSuggest.showToolbar": "never",
+  "editor.suggestOnTriggerCharacters": false,
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "off",
+    "strings": "off"
+  },
+  "editor.wordBasedSuggestions": "currentDocument",
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingQuotes": "always"
+}

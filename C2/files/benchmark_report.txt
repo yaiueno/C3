@@ -1,0 +1,19 @@
+=== Sort Benchmark Report (Parallel with C random generation) ===
+n = 100000
+trials = 100
+workers = 20
+total elapsed = 163.621 sec
+
+[selection_sort]
+mean = 13.617374 sec
+variance = 5.618684 sec^2
+min = 7.174946 sec
+max = 15.554412 sec
+
+[insertion_sort]
+mean = 12.137930 sec
+variance = 5.570568 sec^2
+min = 6.555738 sec
+max = 14.588089 sec
+
+mean ratio (selection / insertion) = 1.121886

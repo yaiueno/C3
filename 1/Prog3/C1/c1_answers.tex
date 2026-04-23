@@ -1,0 +1,132 @@
+\documentclass[uplatex,dvipdfmx,a4paper,11pt]{jsarticle}
+\usepackage[margin=20mm]{geometry}
+\usepackage{fancyvrb}
+\usepackage[dvipdfmx]{hyperref}
+\title{プログラミング演習III 課題C1 一括回答レポート}
+\date{生成日時: 2026-04-09 13:19}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section*{課題C1 一括回答}
+\addcontentsline{toc}{section}{課題C1 一括回答}
+\begin{Verbatim}[fontsize=\small,frame=single]
+作業ディレクトリ: /home/s24/t246270/C3/1/Prog3/C1
+\end{Verbatim}
+\section*{例題2: hello.c の出力}
+\addcontentsline{toc}{section}{例題2: hello.c の出力}
+\begin{Verbatim}[fontsize=\small,frame=single]
+Hello World!
+\end{Verbatim}
+\section*{例題3: repeat.c の出力}
+\addcontentsline{toc}{section}{例題3: repeat.c の出力}
+\begin{Verbatim}[fontsize=\small,frame=single]
+(1) ./myrepeat Hello World!
+[0] ./myrepeat [1] Hello [2] World! 
+(2) ./myrepeat A B C
+[0] ./myrepeat [1] A [2] B [3] C
+\end{Verbatim}
+\section*{例題4: functions.c の出力}
+\addcontentsline{toc}{section}{例題4: functions.c の出力}
+\begin{Verbatim}[fontsize=\small,frame=single]
+100
+1330
+\end{Verbatim}
+\section*{例題5: substitute.c の出力}
+\addcontentsline{toc}{section}{例題5: substitute.c の出力}
+\begin{Verbatim}[fontsize=\small,frame=single]
+i=1 j=2
+i=10 j=100
+\end{Verbatim}
+\section*{例題6: malloc1.c 空欄と実行}
+\addcontentsline{toc}{section}{例題6: malloc1.c 空欄と実行}
+\begin{Verbatim}[fontsize=\small,frame=single]
+空欄(1): (int *)malloc(sizeof(int) * n)
+A[0] = 0
+A[1] = 1
+A[2] = 4
+A[3] = 9
+A[4] = 16
+A[5] = 25
+A[6] = 36
+A[7] = 49
+A[8] = 64
+A[9] = 81
+\end{Verbatim}
+\section*{例題7: read\_array.c 空欄と実行}
+\addcontentsline{toc}{section}{例題7: read\_array.c 空欄と実行}
+\begin{Verbatim}[fontsize=\small,frame=single]
+空欄(1): read_array(argv[1], n)
+空欄(2): (int *)malloc(sizeof(int) * n)
+123 456 789 1011 1213 1415 1617 1819 
+8443
+\end{Verbatim}
+\section*{基本問題1: test.c (入力27)}
+\addcontentsline{toc}{section}{基本問題1: test.c (入力27)}
+\begin{Verbatim}[fontsize=\small,frame=single]
+Input an integer: The square is 729.
+The cube is 19683.
+\end{Verbatim}
+\section*{基本問題2: 各コマンドで作られるファイル}
+\addcontentsline{toc}{section}{基本問題2: 各コマンドで作られるファイル}
+\begin{Verbatim}[fontsize=\small,frame=single]
+(1) gcc -c main.c -> main.o
+(2) gcc -c interface.c -> interface.o
+(3) gcc -c arithmetic.c -> arithmetic.o
+(4) gcc main.o interface.o arithmetic.o -o mytest -> mytest
+\end{Verbatim}
+\section*{基本問題3: make の出力(4行)}
+\addcontentsline{toc}{section}{基本問題3: make の出力(4行)}
+\begin{Verbatim}[fontsize=\small,frame=single]
+gcc -c main.c
+gcc -c interface.c
+gcc -c arithmetic.c
+gcc main.o interface.o arithmetic.o -o mytest
+\end{Verbatim}
+\section*{基本問題4: 端末に入力する内容}
+\addcontentsline{toc}{section}{基本問題4: 端末に入力する内容}
+\begin{Verbatim}[fontsize=\small,frame=single]
+(1) make
+(2) make clean
+(3) make interface.o
+\end{Verbatim}
+\section*{基本問題5: make\_array のmakefile内容と実行}
+\addcontentsline{toc}{section}{基本問題5: make\_array のmakefile内容と実行}
+\begin{Verbatim}[fontsize=\small,frame=single]
+--- makefile ---
+OBJS = main.o array_operations.o
+CC = gcc
+
+array_test: $(OBJS)
+	$(CC) $(OBJS) -o array_test
+
+main.o: main.c C1.h
+	$(CC) -c main.c
+
+array_operations.o: array_operations.c C1.h
+	$(CC) -c array_operations.c
+
+clean:
+	rm -f $(OBJS) array_test
+gcc -c main.c
+gcc -c array_operations.c
+gcc main.o array_operations.o -o array_test
+123 456 789 1011 1213 1415 1617 1819
+\end{Verbatim}
+\section*{発展課題1: 最頻値}
+\addcontentsline{toc}{section}{発展課題1: 最頻値}
+\begin{Verbatim}[fontsize=\small,frame=single]
+サンプル array.txt の最頻値:
+3
+\end{Verbatim}
+\section*{後片付け}
+\addcontentsline{toc}{section}{後片付け}
+\begin{Verbatim}[fontsize=\small,frame=single]
+(出力なし)
+\end{Verbatim}
+\section*{完了}
+\addcontentsline{toc}{section}{完了}
+\begin{Verbatim}[fontsize=\small,frame=single]
+一括回答の生成が完了しました。
+\end{Verbatim}
+\end{document}

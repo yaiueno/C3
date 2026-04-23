@@ -1,0 +1,23 @@
+{
+  "config": {
+    "n": 100000,
+    "trials": 100,
+    "workers": 20
+  },
+  "selection_sort": {
+    "count": 100,
+    "mean_sec": 13.617374269810062,
+    "variance_sec2": 5.618683528693701,
+    "min_sec": 7.1749457890000485,
+    "max_sec": 15.55441226900075
+  },
+  "insertion_sort": {
+    "count": 100,
+    "mean_sec": 12.137929555120282,
+    "variance_sec2": 5.570568180488931,
+    "min_sec": 6.555738218998158,
+    "max_sec": 14.588089451000997
+  },
+  "mean_ratio_selection_over_insertion": 1.1218860850997185,
+  "total_elapsed_sec": 163.62138125899946
+}
