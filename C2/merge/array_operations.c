@@ -32,13 +32,16 @@ User *read_array (char *filename, int n){
         exit(1);
     }
     A= (User *)malloc(sizeof(User) * n );
+    int i;
+    
     for (i = 0;i < n; i++){
-        if(fscanf(fp, "%d", &A[i])==EOF){
+        A[i].id = i;
+        if(fscanf(fp, "%d", &A[i].score)==EOF){
             break;
         }
     }
     fclose(fp);
-    return *users;
+    return A;
 }
 
 void show_array(int *A, int cnt){
