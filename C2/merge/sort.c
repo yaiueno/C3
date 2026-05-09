@@ -1,5 +1,7 @@
+#include "C1.h"
 #include "C2.h"
 
+/*
 void selection_sort(int *A, int k){
     int i, j, p, min;
     
@@ -18,7 +20,9 @@ void selection_sort(int *A, int k){
     }
     return;
 }
+*/
 
+/*
 void insertion_sort(int *A, int n){
     int i, j, tmp;
     
@@ -36,20 +40,21 @@ void insertion_sort(int *A, int n){
         //show_array(A, n);
     }
 }
-
-void merge(int *A, int left, int right){
+*/
+void merge(User *A, int left, int right){
     int i,mid = (left + right) / 2;
-    int  *B, p, q, r;
+    int p, q, r;
+    User *B;
 
     if(left >= right){
         return;
     }else{
-        B = (int*)malloc(sizeof(int) * (right - left + 1));
+        B = (User*)malloc(sizeof(User) * (right - left + 1));
         p = left;
         q = mid + 1;
         r = 0;
         while ((p <= mid) && (q <= right)){
-            if(A[p] < A[q]){
+            if(A[p].score > A[q].score){
                 B[r] = A[p];
                 r++;
                 p++;
@@ -80,8 +85,8 @@ void merge(int *A, int left, int right){
     }
 }
 
-void merge_sort(int *A,int left, int right){
-    printf("%d %d START\n", left, right);
+void merge_sort(User *A,int left, int right){
+    //printf("%d %d START\n", left, right);
     show_array(A, right - left);
     if (left == right){
         printf("%d %d END\n", left, right);
@@ -91,7 +96,7 @@ void merge_sort(int *A,int left, int right){
         merge_sort(A, (left + right)/2 + 1, right);
     }
     merge(A, left, right);
-    printf("%d %d END\n", left, right);
+    //printf("%d %d END\n", left, right);
 
     return;
 }

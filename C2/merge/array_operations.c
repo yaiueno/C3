@@ -1,8 +1,4 @@
 #include "C1.h"
-typedef struct {
-    int id;
-    int score;
-}User;
 
 int count(char *filename){
     int a,k;
@@ -43,16 +39,15 @@ User *read_array (char *filename, int n){
     return A;
 }
 
-void show_array(int *A, int cnt){
+void show_array(User *A, int cnt){
     int i;
-
-    for (i=0; i < cnt; i++){
-        if(A[i] < INT_MAX)
-            printf("%d", A[i]);
-        else
+    for (i = 0; i < cnt; i++){
+        if(A[i].score < INT_MAX){
+            // 1人分を1行にまとめると見やすい！
+            printf("[ID:%d Score:%d] ", A[i].id, A[i].score);
+        } else {
             printf("N ");
+        }
     }
     printf("\n");
-    
-    return;
 }
