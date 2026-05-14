@@ -1,4 +1,4 @@
-OBJS = main.o que_opreations.o
+OBJS = main.o que_operations.c
 CC = gcc
 
 myque_test:$(OBJS)
@@ -8,4 +8,4 @@ main.o: main.c C3.h
 que_opereations.o: que_operations.c C3.h
 	$(CC) -c que_operations.c
 clean:
-	rm
+	rm -f $(OBJS) myque_test
