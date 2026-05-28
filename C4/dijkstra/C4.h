@@ -16,3 +16,4 @@ void show_array(int *,int);
 
 void Extract_Min(int *, int, int *, int *);
 void Decrease_Key(int *, int, int);
+void print_path(int *, int );

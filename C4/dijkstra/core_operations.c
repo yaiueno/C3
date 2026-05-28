@@ -22,3 +22,14 @@ void Extract_Min(int *L, int n, int *min, int *index){
 void Decrease_Key(int *L, int j, int z){
     L[j] = z;
 }
+
+void print_path(int *Path, int curr){
+    if (curr == 0){
+        printf("0");
+        return;
+    }
+
+    print_path(Path, Path[curr]);
+
+    printf(" → %d",curr);
+}
